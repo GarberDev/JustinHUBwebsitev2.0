@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Midwest Sales - Justin Garber</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+    <script src="https://unpkg.com/lucide@latest" defer></script>
+</head>
+<body class="bg-gray-50">
+    <div class="min-h-screen">
+        <header class="bg-white shadow-md p-4 flex justify-between items-center">
+            <h1 class="text-2xl font-bold text-gray-800">Midwest Sales</h1>
+            <a href="../index.html" class="text-blue-500 hover:underline">Back to Home</a>
+        </header>
+        <main class="p-4 md:p-8 max-w-5xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h2 class="text-2xl font-bold text-gray-800 mb-4">Contact Information</h2>
+                    <div class="space-y-3 text-gray-700">
+                        <p><strong>Name:</strong> Justin Garber</p>
+                        <p><strong>Email:</strong> justin.garber@midwestvet.net</p>
+                        <p><strong>Phone:</strong> (661) 993-0692</p>
+                        <p><strong>Territory:</strong> San Gabriel Valley Region</p>
+                    </div>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h2 class="text-2xl font-bold text-gray-800 mb-4">Sales Territory (San Gabriel Valley)</h2>
+                    <div class="aspect-w-16 aspect-h-9 w-full rounded-lg overflow-hidden shadow-lg border border-gray-200">
+<iframe
+  src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d193645.401!2d-117.7198!3d34.0961!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sus!4v1689281182145!5m2!1sen!2sus"
+  width="100%"
+  height="100%"
+  style="border:0;"
+  allowfullscreen=""
+  loading="lazy"
+  referrerpolicy="no-referrer-when-downgrade">
+</iframe>
+
+                    </div>
+                </div>
+            </div>
+            <div id="schedule-section" class="mt-8 bg-white p-6 rounded-lg shadow-md">
+                <button id="toggle-schedule" class="w-full flex justify-between items-center text-left text-2xl font-bold text-gray-800 mb-4 p-2 rounded-md hover:bg-gray-100">
+                    <span>Customer Schedule</span>
+                    <i data-lucide="chevron-down" id="schedule-chevron" class="h-6 w-6"></i>
+                </button>
+                <div id="schedule-content" class="hidden mt-4">
+                     <div id="pin-entry">
+                        <div class="flex flex-col sm:flex-row items-center gap-4">
+                            <input type="password" id="pin-input" placeholder="Enter PIN to view schedule" class="p-2 border rounded-md w-full sm:w-auto flex-grow">
+                            <button id="pin-submit" class="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 w-full sm:w-auto">Reveal Schedule</button>
+                        </div>
+                        <p id="pin-error" class="text-red-500 mt-2"></p>
+                    </div>
+                    <div id="schedule-embed" class="hidden">
+                        <h3 class="text-xl font-semibold text-gray-700 mb-2">Schedule</h3>
+                        <p class="text-gray-600 mb-4">Below is the embedded schedule. Please note that this is a live document and may change.</p>
+                        <div class="aspect-w-16 aspect-h-9 w-full rounded-lg overflow-hidden shadow-lg border border-gray-200 mt-4">
+                            <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ9gY_l_mZ0gLQZ5z5z5Z5z5Z5z5Z5z5Z5z5Z5z5Z5z5Z5z5Z5z5Z5z5Z/pubhtml?gid=0&single=true" width="100%" height="100%" style="border:0;" allowfullscreen=""></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="../script.js"></script>
+</body>
+</html>

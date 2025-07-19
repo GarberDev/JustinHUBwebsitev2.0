@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secure Access - Justin Garber</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+    <script src="https://unpkg.com/lucide@latest" defer></script>
+</head>
+<body class="bg-gray-50">
+    <div class="min-h-screen">
+        <header class="bg-white shadow-md p-4 flex justify-between items-center">
+            <h1 class="text-2xl font-bold text-gray-800">Secure Projects</h1>
+            <a href="../index.html" class="text-blue-500 hover:underline">Back to Home</a>
+        </header>
+        <main id="secure-main" class="p-4 md:p-8 max-w-4xl mx-auto flex flex-col items-center justify-center text-center">
+            <div class="w-full bg-white p-8 rounded-lg shadow-md">
+                <div id="secure-pin-entry">
+                    <i data-lucide="lock" class="h-16 w-16 text-red-500 mx-auto mb-4"></i>
+                    <h2 class="text-2xl font-bold text-gray-800 mb-2">Access Restricted</h2>
+                    <p class="text-gray-600 mb-6">Please enter the PIN to view personal projects.</p>
+                    <div class="flex flex-col sm:flex-row gap-2 max-w-sm mx-auto">
+                        <input type="password" id="secure-pin-input" placeholder="Enter PIN" class="p-2 border rounded-md w-full flex-grow">
+                        <button id="secure-pin-submit" class="bg-red-500 text-white px-6 py-2 rounded-md hover:bg-red-600">Unlock</button>
+                    </div>
+                    <p id="secure-pin-error" class="text-red-500 mt-4"></p>
+                </div>
+                <div id="secure-content" class="hidden">
+                    <h2 class="text-3xl font-bold text-gray-800 mb-4">Welcome to My Projects</h2>
+                    <p class="text-gray-600 mb-6">This is a secure area to host and display personal projects.</p>
+                    <div class="text-left border-t pt-6">
+                        <div class="p-4 border rounded-lg hover:bg-gray-50">
+                            <h3 class="text-xl font-semibold text-blue-600">Project Alpha</h3>
+                            <p class="text-gray-700 mt-1">A web application for tracking personal fitness goals. Built with React and Firebase.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="../script.js"></script>
+</body>
+</html>

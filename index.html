@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Justin Garber - Personal Website</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/lucide@latest" defer></script>
+</head>
+<body class="bg-gray-50">
+    <div class="flex flex-col items-center justify-center min-h-screen p-4 text-center">
+        <div class="w-full max-w-2xl">
+            <h1 class="text-5xl md:text-6xl font-bold text-gray-800 mb-4">Justin Garber</h1>
+            <p class="text-xl md:text-2xl text-gray-600 mb-12">Welcome to my personal hub.</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <a href="pages/sales.html" class="group flex flex-col items-center justify-center p-8 bg-white rounded-xl shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 border border-gray-200">
+                    <i data-lucide="map-pin" class="h-12 w-12 text-blue-500 mb-4 transition-transform duration-300 group-hover:scale-110"></i>
+                    <span class="text-2xl font-semibold text-gray-700">Midwest Sales</span>
+                </a>
+                <a href="pages/personal.html" class="group flex flex-col items-center justify-center p-8 bg-white rounded-xl shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 border border-gray-200">
+                    <i data-lucide="user" class="h-12 w-12 text-green-500 mb-4 transition-transform duration-300 group-hover:scale-110"></i>
+                    <span class="text-2xl font-semibold text-gray-700">Personal Info</span>
+                </a>
+                <a href="pages/resume.html" class="group flex flex-col items-center justify-center p-8 bg-white rounded-xl shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 border border-gray-200">
+                    <i data-lucide="briefcase" class="h-12 w-12 text-purple-500 mb-4 transition-transform duration-300 group-hover:scale-110"></i>
+                    <span class="text-2xl font-semibold text-gray-700">Resume</span>
+                </a>
+                <a href="pages/secure.html" class="group flex flex-col items-center justify-center p-8 bg-white rounded-xl shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 border border-gray-200">
+                    <i data-lucide="lock" class="h-12 w-12 text-red-500 mb-4 transition-transform duration-300 group-hover:scale-110"></i>
+                    <span class="text-2xl font-semibold text-gray-700">Secure Access</span>
+                </a>
+            </div>
+            <div class="mt-8 w-full">
+                <a href="pages/managers-meeting.html" class="group w-full flex flex-col items-center justify-center p-6 bg-amber-100 border-2 border-dashed border-amber-400 rounded-xl shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+                    <i data-lucide="calendar" class="h-10 w-10 text-amber-600 mb-3 transition-transform duration-300 group-hover:scale-110"></i>
+                    <span class="text-xl font-semibold text-amber-800">Managers Meeting</span>
+                    <span class="text-sm text-amber-700 mt-1">Special Event</span>
+                </a>
+            </div>
+        </div>
+    </div>
+    <script>
+        // Ensure Lucide icons are rendered after the page loads
+        document.addEventListener('DOMContentLoaded', () => {
+            lucide.createIcons();
+        });
+    </script>
+</body>
+</html>
