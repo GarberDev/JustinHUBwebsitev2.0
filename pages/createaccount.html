@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Midwest Veterinary Supply - New Account</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Chosen Palette: Corporate Calm -->
+    <!-- Application Structure Plan: The application is designed as a single-view, task-oriented landing page. This structure was chosen for its simplicity and directness. The core of the app is a tabbed interface that separates the main user paths: "Apply Online" (primary), "Needed Documents" (supporting info), and "Contact Us" (secondary). This prevents clutter and guides the user efficiently. The user flow is: land, see the primary CTA, easily access required document info, or switch to contact options. -->
+    <!-- Visualization & Content Choices: Report Info: Company branding, application URL, contact emails, document list. -> Goal: Guide user to apply, inform about requirements, or ask questions. -> Viz/Presentation Method: Interactive tabbed layout built with HTML/CSS/JS. -> Interaction: Users click tabs to reveal content. "Copy to Clipboard" buttons for convenience. -> Justification: This interactive approach makes the information more accessible and actionable than a static page. -> Library/Method: Vanilla JavaScript for interactions, Tailwind CSS for styling. -->
+    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .tab-active {
+            border-color: #2563eb;
+            color: #2563eb;
+            background-color: #eff6ff;
+        }
+        .tab-inactive {
+            border-color: transparent;
+            color: #6b7280;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800">
+
+    <div class="container mx-auto p-4 sm:p-6 md:p-8 max-w-4xl min-h-screen flex flex-col justify-center">
+        <main class="bg-white rounded-2xl shadow-lg p-6 sm:p-8 md:p-12 w-full">
+            
+            <header class="text-center mb-10">
+                <img src="https://www.midwestvetsupply.com/wps/wcm/connect/73b3614a-c744-469b-98a9-065a5198e3b3/MWI-logo-2c.png?MOD=AJPERES&CACHEID=ROOTWORKSPACE-73b3614a-c744-469b-98a9-065a5198e3b3-o4q391d" alt="Midwest Veterinary Supply Logo" class="w-48 mx-auto mb-4" onerror="this.style.display='none'">
+                <p class="text-sm text-slate-500">800.643.9378 • <a href="https://www.midwestvetsupply.com" target="_blank" class="text-blue-600 hover:underline">www.midwestvetsupply.com</a></p>
+            </header>
+
+            <div class="text-center mb-10">
+                <h1 class="text-3xl md:text-4xl font-bold text-slate-900 mb-2">Opening an Account is Easy</h1>
+                <p class="text-slate-600 max-w-2xl mx-auto">To become a new customer, choose your preferred method below to access our online application or get in touch with our team.</p>
+            </div>
+
+            <div>
+                <div class="border-b border-slate-200 mb-6">
+                    <nav class="-mb-px flex justify-center space-x-1 sm:space-x-4" aria-label="Tabs">
+                        <button id="tab-apply" data-tab="apply" class="tab-button whitespace-nowrap py-3 px-4 border-b-2 font-medium text-sm sm:text-base rounded-t-lg transition-colors duration-200 tab-active">
+                            Apply Online
+                        </button>
+                        <button id="tab-docs" data-tab="docs" class="tab-button whitespace-nowrap py-3 px-4 border-b-2 font-medium text-sm sm:text-base rounded-t-lg transition-colors duration-200 tab-inactive">
+                            Needed Documents
+                        </button>
+                        <button id="tab-contact" data-tab="contact" class="tab-button whitespace-nowrap py-3 px-4 border-b-2 font-medium text-sm sm:text-base rounded-t-lg transition-colors duration-200 tab-inactive">
+                            Contact Us
+                        </button>
+                    </nav>
+                </div>
+
+                <div id="content-apply" data-content="apply" class="tab-content">
+                    <p class="text-center text-slate-600 mb-6">Navigate to our new customer portal directly or scan the QR code with your smartphone.</p>
+                    <div class="grid grid-cols-1 md:grid-cols-5 gap-6 items-center">
+                        <div class="md:col-span-3 bg-slate-50 rounded-lg p-4">
+                            <label for="app-link" class="text-xs font-semibold text-slate-500 uppercase">Application Link</label>
+                            <div class="flex items-center space-x-2 mt-1">
+                                <input id="app-link" type="text" readonly value="https://www.midwestvetsupply.com/wps/portal/c/new-account-application" class="w-full bg-transparent text-blue-700 text-sm truncate">
+                                <button onclick="copyToClipboard('https://www.midwestvetsupply.com/wps/portal/c/new-account-application', this)" class="flex-shrink-0 bg-blue-600 text-white text-xs font-bold py-2 px-3 rounded-md hover:bg-blue-700 transition-colors duration-200">
+                                    COPY
+                                </button>
+                            </div>
+                        </div>
+                        <div class="md:col-span-2 flex flex-col items-center justify-center">
+                            <img src="https://api.qrserver.com/v1/create-qr-code/?size=140x140&data=https://www.midwestvetsupply.com/wps/portal/c/new-account-application" alt="QR code for new account application" class="rounded-lg shadow-md">
+                             <p class="text-xs text-slate-500 mt-2">Scan with your phone</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div id="content-docs" data-content="docs" class="tab-content hidden">
+                    <p class="text-center text-slate-600 mb-6">Please have the following documents ready to complete your application.</p>
+                    <div class="max-w-md mx-auto">
+                        <ul class="space-y-3">
+                            <li class="bg-slate-50 rounded-lg p-4 flex items-center justify-between">
+                                <span class="text-slate-700">Veterinary License</span>
+                                <a href="#" class="text-blue-600 hover:underline text-sm font-medium">View Example</a>
+                            </li>
+                            <li class="bg-slate-50 rounded-lg p-4 flex items-center justify-between">
+                                <span class="text-slate-700">DEA Registration (if applicable)</span>
+                                <a href="#" class="text-blue-600 hover:underline text-sm font-medium">View Example</a>
+                            </li>
+                            <li class="bg-slate-50 rounded-lg p-4 flex items-center justify-between">
+                                <span class="text-slate-700">State Resale Certificate</span>
+                                <a href="#" class="text-blue-600 hover:underline text-sm font-medium">View Example</a>
+                            </li>
+                             <li class="bg-slate-50 rounded-lg p-4 flex items-center justify-between">
+                                <span class="text-slate-700">Business License</span>
+                                <a href="#" class="text-blue-600 hover:underline text-sm font-medium">View Example</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div id="content-contact" data-content="contact" class="tab-content hidden">
+                    <p class="text-center text-slate-600 mb-6">If you have questions during the application process, please contact our customer accounts team or your local representative.</p>
+                    <div class="space-y-4 max-w-md mx-auto">
+                        <div class="bg-slate-50 rounded-lg p-4">
+                            <label class="text-xs font-semibold text-slate-500 uppercase">General Inquiries</label>
+                             <div class="flex items-center space-x-2 mt-1">
+                                <a href="mailto:customer.accounts@midwestvet.net" class="text-blue-700 text-sm truncate">customer.accounts@midwestvet.net</a>
+                                <button onclick="copyToClipboard('customer.accounts@midwestvet.net', this)" class="flex-shrink-0 bg-blue-600 text-white text-xs font-bold py-2 px-3 rounded-md hover:bg-blue-700 transition-colors duration-200 ml-auto">
+                                    COPY
+                                </button>
+                            </div>
+                        </div>
+                         <div class="bg-slate-50 rounded-lg p-4">
+                            <label class="text-xs font-semibold text-slate-500 uppercase">Local Representative</label>
+                             <div class="flex items-center space-x-2 mt-1">
+                                <a href="mailto:justin.garber@midwestvet.net" class="text-blue-700 text-sm truncate">justin.garber@midwestvet.net</a>
+                                <button onclick="copyToClipboard('justin.garber@midwestvet.net', this)" class="flex-shrink-0 bg-blue-600 text-white text-xs font-bold py-2 px-3 rounded-md hover:bg-blue-700 transition-colors duration-200 ml-auto">
+                                    COPY
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const tabButtons = document.querySelectorAll('.tab-button');
+            const tabContents = document.querySelectorAll('.tab-content');
+
+            tabButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const targetTab = button.dataset.tab;
+
+                    tabButtons.forEach(btn => {
+                        btn.classList.remove('tab-active');
+                        btn.classList.add('tab-inactive');
+                    });
+
+                    button.classList.add('tab-active');
+                    button.classList.remove('tab-inactive');
+
+                    tabContents.forEach(content => {
+                        if (content.dataset.content === targetTab) {
+                            content.classList.remove('hidden');
+                        } else {
+                            content.classList.add('hidden');
+                        }
+                    });
+                });
+            });
+        });
+
+        function copyToClipboard(text, buttonElement) {
+            if (!navigator.clipboard) {
+                const textArea = document.createElement("textarea");
+                textArea.value = text;
+                textArea.style.position = "fixed";
+                textArea.style.left = "-9999px";
+                document.body.appendChild(textArea);
+                textArea.focus();
+                textArea.select();
+                try {
+                    document.execCommand('copy');
+                    showFeedback(buttonElement);
+                } catch (err) {
+                    console.error('Fallback: Oops, unable to copy', err);
+                }
+                document.body.removeChild(textArea);
+                return;
+            }
+            navigator.clipboard.writeText(text).then(function() {
+                showFeedback(buttonElement);
+            }, function(err) {
+                console.error('Async: Could not copy text: ', err);
+            });
+        }
+
+        function showFeedback(buttonElement) {
+            const originalText = buttonElement.innerHTML;
+            buttonElement.innerHTML = 'COPIED!';
+            buttonElement.classList.remove('bg-blue-600', 'hover:bg-blue-700');
+            buttonElement.classList.add('bg-green-500');
+            
+            setTimeout(() => {
+                buttonElement.innerHTML = originalText;
+                buttonElement.classList.remove('bg-green-500');
+                buttonElement.classList.add('bg-blue-600', 'hover:bg-blue-700');
+            }, 2000);
+        }
+    </script>
+</body>
+</html>

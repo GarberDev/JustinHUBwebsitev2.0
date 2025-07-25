@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", () => {
     pinSubmitBtn.addEventListener("click", () => {
       const pinInput = document.getElementById("pin-input");
       const errorEl = document.getElementById("pin-error");
-      if (pinInput.value === "1234") {
+      if (pinInput.value === "2027") {
         // Correct PIN for sales schedule
         document.getElementById("pin-entry").classList.add("hidden");
         document.getElementById("schedule-embed").classList.remove("hidden");
@@ -38,7 +38,7 @@ document.addEventListener("DOMContentLoaded", () => {
     securePinSubmitBtn.addEventListener("click", () => {
       const pinInput = document.getElementById("secure-pin-input");
       const errorEl = document.getElementById("secure-pin-error");
-      if (pinInput.value === "2024") {
+      if (pinInput.value === "1469853") {
         // Correct PIN for secure projects
         document.getElementById("secure-pin-entry").classList.add("hidden");
         document.getElementById("secure-content").classList.remove("hidden");
